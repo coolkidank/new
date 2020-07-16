@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap");
+@import "./varibles.scss";
+@import "./breakpoints.scss";
+@import "./components/header.scss";
+@import "./components/banner.scss";
+@import "./components/cases.scss";
+@import "./components/navigation.scss";
+
+body,
+html {
+  visibility: hidden;
+  user-select: none;
+  background: $white;
+  overscroll-behavior: none;
+  margin: 0;
+  font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 1560px;
+  min-width: 1560px;
+  margin: 0 auto;
+  height: 100%;
+  @include media("<=1560px") {
+    width: 1280px;
+    min-width: 1280px;
+  }
+  @include media("<=desktop") {
+    width: 1080px;
+    min-width: 1080px;
+  }
+  @include media("<=1080px") {
+    width: 100%;
+    min-width: 100%;
+  }
+  .row {
+    display: flex;
+    height: 100%;
+    padding: 0 32px;
+    @include media("<=phone") {
+      padding: 0 16px;
+    }
+  }
+  .v-center {
+    align-items: center;
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100%;
+  .row {
+    display: flex;
+    height: 100%;
+  }
+}
+
+// intro overlay
+.intro-overlay {
+  .top {
+    // height: 50vh;
+    height: 100vh;
+    // height: calc(var(--vh, 1vh) * 50);
+    position: absolute;
+    width: 100%;
+    z-index: 8;
+    .overlay-top {
+      position: absolute;
+      height: 100%;
+      // width: 33.333vw;
+      width: 100vw;
+      background: $black;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      @include media("<=tablet") {
+        width: 100vw;
+      }
+      // &:nth-child(2) {
+      //   left: 33.333%;
+      //   @include media("<=tablet") {
+      //     display: none;
+      //   }
+      // }
+      // &:nth-child(3) {
+      //   left: 66.666%;
+      //   @include media("<=tablet") {
+      //     display: none;
+      //   }
+      // }
+    }
+  }
+  .bottom {
+    height: 50vh;
+    height: calc(var(--vh, 1vh) * 50);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 8;
+    .overlay-bottom {
+      position: absolute;
+      height: 100%;
+      width: 33.333vw;
+      background: $black;
+      bottom: 0;
+      right: 66.666%;
+      @include media("<=tablet") {
+        right: 0;
+        width: 100vw;
+      }
+      &:nth-child(2) {
+        right: 33.333%;
+        @include media("<=tablet") {
+          width: 100vw;
+          top: 100%;
+          right: 0;
+        }
+      }
+      &:nth-child(3) {
+        right: 0;
+        @include media("<=tablet") {
+          width: 100vw;
+          top: 200%;
+        }
+      }
+    }
+  }
+}
+
+.App {
+  z-index: 2;
+  transform: translateY(0);
+  position: relative;
+}
+
+//page-about
+.page {
+  height: 100vh;
+  width: 100%;
+  background: $white;
+
+  .row {
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+
+    h3 {
+      font-weight: 700;
+
+      font-size: 40px;
+    }
+  }
+  .next-row {
+    padding-left: 80px;
+    padding-right: 80px;
+    align-items: center;
+    display: flex;
+
+    h4 {
+      font-weight: 500;
+      letter-spacing: 0.3rem;
+      line-height: 40px;
+    }
+  }
+}
+
+//page project
+.project {
+  height: 100vh;
+  width: 100%;
+  background: $white;
+
+  .row {
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+
+    h3 {
+      font-weight: 700;
+
+      font-size: 40px;
+    }
+  }
+  img {
+    width: 50%;
+    align-items: left;
+    margin-left: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 25px;
+    display: fixed;
+    // float: left;
+    background: $black;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
+    cursor: pointer;
+    &:hover {
+      width: 800px;
+      height: 800px;
+    }
+  }
+  .project-name {
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-bottom: 50px;
+    h3 {
+      display: inline;
+      font-weight: 500;
+
+      font-size: 40px;
+      @include media("<=tablet") {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+// text-align: center;
+// position: static;
+// margin-top: 50vh;
+// @include media("<=tablet") {
+//   position: static;
+// }
+
+//approach page
+
+.approach {
+  height: 100vh;
+  width: 100%;
+  background: $white;
+
+  .row {
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+
+    h3 {
+      font-weight: 700;
+
+      font-size: 40px;
+    }
+  }
+  .next-row {
+    padding-left: 80px;
+    padding-right: 80px;
+    align-items: center;
+    display: flex;
+
+    h4 {
+      font-weight: 500;
+      letter-spacing: 0.3rem;
+      line-height: 40px;
+    }
+  }
+  .button-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    .button {
+      background-color: black;
+      border: black;
+      border-width: 1px;
+      border-radius: 5px;
+      color: white;
+      padding: 16px 38px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.3rem;
+      margin: 4px 2px;
+      cursor: pointer;
+      &:hover {
+        background-color: white;
+        color: black;
+        border: black;
+      }
+    }
+  }
+  .h33 {
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    text-align: center;
+  }
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icone {
+      margin-left: 15px;
+      margin-right: 15px;
+      color: black;
+      font-size: 30px;
+      &:hover {
+        color: chartreuse;
+      }
+    }
+  }
+}
+
+//skilss page
+.skills {
+  height: 100vh;
+  width: 100%;
+  background: $white;
+
+  .row {
+    padding-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+
+    h3 {
+      font-weight: 700;
+      font-size: 40px;
+    }
+  }
+
+  .icons {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icone {
+      margin-left: 35px;
+      margin-right: 35px;
+      color: black;
+      font-size: 90px;
+      @include media("<=phone") {
+        font-size: 20px;
+      }
+      @include media("<=tablet") {
+        vertical-align: auto;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 25px;
+      }
+    }
+  }
+}
