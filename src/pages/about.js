@@ -9,8 +9,8 @@ const About = () => {
         </div>
         <div className="next-row">
           <h4>
-            Hello! i am Anchal Thool, based in Nagpur and Mumbai. I am a
-            passionate and creative UI Designer with experience in creating
+            Hello! i am Anchal Thool, based in Nagpur and Mumbai.I am studying in Veermata Jijabai Technological Institute. I am a
+            passionate and creative learning UI Designer with experience in creating
             interfaces for the web and mobile
           </h4>
         </div>
